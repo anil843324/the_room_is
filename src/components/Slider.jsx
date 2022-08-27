@@ -5,19 +5,25 @@ import {FaGreaterThan , FaLessThan} from     "react-icons/fa"
 const Slider = ({totalimage}) => {
 
    
-   console.log(!!totalimage && totalimage)
+  //  console.log(!!totalimage && totalimage)
+  //  console.log("Slider image from getting in slider page" ,totalimage)
+    let slideingimg=  totalimage && totalimage.length  >0 ? totalimage : []
     
+
+    console.log("Slider image  correct" ,slideingimg)
   const [count, setCount] = useState(0);
 
   const Next = () => {
-    setCount((prev) => (prev + 1) % totalimage.length);
+     console.log("next")
+    setCount((prev) => (prev + 1) % slideingimg.length);
+
   };
 
   const Back = () => {
     if (count >= 1) {
       setCount((prev) => prev - 1);
     } else {
-      setCount(totalimage.length - 1);
+      setCount(slideingimg.length - 1);
     }
   };
 
@@ -25,7 +31,7 @@ const Slider = ({totalimage}) => {
     let interval = null;
 
     interval = setInterval(() => {
-      setCount((prev) => (prev + 1) % totalimage.length);
+      setCount((prev) => (prev + 1) % slideingimg.length);
     }, 10000);
 
     return () => clearInterval(interval);
@@ -45,7 +51,7 @@ const Slider = ({totalimage}) => {
         </span>
 
         <img
-          src={!!totalimage && totalimage[count]}
+          src={!!slideingimg && slideingimg[count]}
           alt="slider img"
           className=" h-[200px] rounded-md w-[400px] md:w-full md:h-[350px] "
         />

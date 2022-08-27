@@ -25,7 +25,7 @@ function* searchProducts(data) {
     );
     filterData = yield filterData.json();
     //    now call to send the data to action
-    console.log("action is called ", filterData);
+    // console.log("action is called ", filterData);
     yield put({
       type: SET_PRODUCT_LIST,
       data: filterData,
@@ -42,7 +42,7 @@ function* searchFindById(singleProductId) {
     );
     singleProduct = yield singleProduct.json();
     //    now call to send the data to action
-    console.log("action is called ", singleProduct);
+    // console.log("action is called ", singleProduct);
     yield put({
       type: PRODUCT_SET_BY_ID,
      singleProduct,

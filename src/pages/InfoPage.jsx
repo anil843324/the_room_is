@@ -28,6 +28,8 @@ const InfoPage = () => {
 
   let totalimage = singleData.image_url;
 
+  
+
   const sumWithInitial = totalRating && totalRating.reduce((p, c) => p + c, 0);
 
    
@@ -100,7 +102,7 @@ const InfoPage = () => {
                 
                 <ion-fab left bottom>
                     
-                  <a href={`tel:+91${singleData.mobile_no}`} class="button" ion-fab color="light">
+                  <a href={`tel:+91${singleData.mobile_no}`} className="button" ion-fab color="light">
                     <ion-icon name="keypad">{singleData.mobile_no}</ion-icon>
                   </a>
                 </ion-fab>
